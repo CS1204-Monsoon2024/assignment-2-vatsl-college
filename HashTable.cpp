@@ -69,6 +69,7 @@ public:
         }
         if (search(key)>-1){
             cout<<"Duplicate key insertion is not allowed"<<"\n";
+            return;
         }
         
         int index = hash(key);  // Compute initial index
@@ -79,6 +80,7 @@ public:
         }
         if (i>=m){
             cout<<"Max probing limit reached!"<<"\n";//if we attempted m slots, probing limit reached.
+            return;
         } else {
             t[index] = key;    // Insert the key at the found index
             occupied[index] = 1; // Mark the slot as occupied
@@ -101,6 +103,7 @@ public:
         int index = search(key);
         if (index==-1){
             cout<<"Element not found"<<"\n";
+            return;
         } else{
             occupied[index]=-1;
         }
