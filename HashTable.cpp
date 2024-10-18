@@ -60,7 +60,7 @@ public:
     }
 
     void insert(int key){
-        if (n/m>=0.8){
+        if (n/(float)m >= 0.8){
                 resizeTable();
         } 
         if (n==m){//check if the table is full
