@@ -115,6 +115,6 @@ public:
                 s+= num + " ";
             }
         }
-        cout<<s<<endl;
+        cout<<s<<"\n";
     }
 };
