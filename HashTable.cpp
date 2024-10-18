@@ -60,6 +60,9 @@ public:
     }
 
     void insert(int key){
+        if (n/(float)m >= 0.8){
+                resizeTable();
+        } 
         if (n==m){//check if the table is full
             cout<<"Table is already full"<<"\n";
             return;
@@ -68,10 +71,6 @@ public:
             cout<<"Duplicate key insertion is not allowed"<<"\n";
             return;
         }
-        if (n/(float)m >= 0.8){
-                resizeTable();
-        } 
-        
         int index = hash(key);  // Compute initial index
         int i = 0;
         while (occupied[index] == 1 &&  i<m) {  // Quadratic probing
