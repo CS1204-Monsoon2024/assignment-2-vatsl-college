@@ -64,11 +64,11 @@ public:
                 resizeTable();
         } 
         if (n==m){//check if the table is full
-            cout<<"Table is already full.\n";
+            cout<<"Table is already full. "<<endl;
             return;
         }
         if (search(key)>-1){
-            cout<<"Duplicate key insertion is not allowed\n"<<endl;
+            cout<<"Duplicate key insertion is not allowed "<<endl;
         }
         
         int index = hash(key);  // Compute initial index
@@ -78,7 +78,7 @@ public:
             index = (hash(key) + i * i) % m;  // Compute new index: h(k) + i^2
         }
         if (i>=m){
-            cout<<"Max probing limit reached!\n"<<endl;//if we attempted m slots, probing limit reached.
+            cout<<"Max probing limit reached! "<<endl;//if we attempted m slots, probing limit reached.
         } else {
             t[index] = key;    // Insert the key at the found index
             occupied[index] = 1; // Mark the slot as occupied
@@ -100,7 +100,7 @@ public:
     void remove(int key){
         int index = search(key);
         if (index==-1){
-            cout<<"Element not found\n"<<endl;
+            cout<<"Element not found "<<endl;
         } else{
             occupied[index]=-1;
         }
