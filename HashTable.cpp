@@ -80,9 +80,9 @@ public:
             t[index] = key;    // Insert the key at the found index
             occupied[index] = 1; // Mark the slot as occupied
             n++;  
-            if (n/m>=0.8){
-                resizeTable();
-            }   
+            // if (n/m>=0.8){
+            //     resizeTable();
+            // }   
         }
     }
     int search(int key){
