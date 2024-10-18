@@ -60,6 +60,9 @@ public:
     }
 
     void insert(int key){
+        if (n/m>=0.8){
+                resizeTable();
+        } 
         if (n==m){//check if the table is full
             cout<<"Table is already full."<<endl;
             return;
@@ -79,10 +82,7 @@ public:
         } else {
             t[index] = key;    // Insert the key at the found index
             occupied[index] = 1; // Mark the slot as occupied
-            n++;  
-            // if (n/m>=0.8){
-            //     resizeTable();
-            // }   
+            n++;   
         }
     }
     int search(int key){
